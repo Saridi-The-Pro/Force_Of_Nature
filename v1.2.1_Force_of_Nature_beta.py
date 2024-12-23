@@ -28,7 +28,7 @@ class Character:
         Health: {self.health}
         """
 # List of weapons and powers
-weapons = ["Long Sword", "Katana", "Bow", "Throwable Knife", "Axe", "Mace", "Spear", "Dagger", "Staff", "TREBUCHET","88mm Raketenpanzerbuechse 54"]
+weapons = ["Long Sword", "Katana", "Bow", "Throwable Knife", "Axe", "Mace", "Spear", "Dagger", "Staff", "TREBUCHET"]
 special_powers = ["Fire", "Water", "Ice", "Lightning", "Earth", "Wind"]
 # Level player from 0
 level = 0
