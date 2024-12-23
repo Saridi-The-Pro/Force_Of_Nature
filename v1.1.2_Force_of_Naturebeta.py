@@ -1,6 +1,5 @@
 from random import choice, randint
 from time import *
-
 class Character:
     def __init__(self, health, weapon, special_power):
         self.health = health
@@ -8,7 +7,6 @@ class Character:
         self.special_power = special_power
         self.is_frozen = False  # For Ice effect
         self.weapon_damage = self.set_weapon_damage()
-
     def set_weapon_damage(self):
         weapon_damage = {
             "Long Sword": (7, 10),
@@ -19,21 +17,19 @@ class Character:
             "Mace": (8, 10),
             "Spear": (6, 10),
             "Dagger": (4, 7),
-            "Staff": (5, 8)
+            "Staff": (5, 8),
+            "TREBUCHET": (15, 15)
         }
         return weapon_damage.get(self.weapon, (5, 8))  # Default damage for unknown weapons
-
     def info(self):
         return f"""
         Weapon: {self.weapon}
         Special Power: {self.special_power}
         Health: {self.health}
         """
-
 # List of weapons and powers
-weapons = ["Long Sword", "Katana", "Bow", "Throwable Knife", "Axe", "Mace", "Spear", "Dagger", "Staff"]
+weapons = ["Long Sword", "Katana", "Bow", "Throwable Knife", "Axe", "Mace", "Spear", "Dagger", "Staff", "TREBUCHET","88mm Raketenpanzerbuechse 54"]
 special_powers = ["Fire", "Water", "Ice", "Lightning", "Earth", "Wind"]
-
 # Level player from 0
 level = 0
 # Every increase 1, increase 1 health
@@ -43,16 +39,15 @@ repetition = "yes"
 score = 0  # Track the number of enemies defeated
 print("Game created by Saridi and Nicander!!")
 sleep(4)
-print("UNTITLED RPG GAME!!")
+print("FORCE OF NATURE!!")
 sleep(4)
-print("V1.1.1")
+print("V.1.2.1")
 sleep(4)
 print("Don't forget to follow our Instagram account!!")
 sleep(4)
 print("Saridi: https://www.instagram.com/s4r_m4l3z_404/")
 print("Nicander: https://www.instagram.com/nicander_arif/")
 sleep(4)
-
 while repetition == "yes":
     # Initialize Hero and Enemy
     hero = Character(randint(40,50), choice(weapons), choice(special_powers))
@@ -77,7 +72,6 @@ while repetition == "yes":
                 enemy.health -= damage
                 sleep(2)
                 print(f"\nYou attacked the enemy and dealt {damage} damage using your {hero.weapon}!")
-
                 # Hero's special power effect (same as before, no change here)
                 if hero.special_power == "Fire":
                     burn_damage = 2
@@ -146,18 +140,15 @@ while repetition == "yes":
                 sleep(2)
                 print("\nYou dodged the enemy's attack!")
                 continue
-
             # Check if enemy is still alive
             if enemy.health <= 0:
                 break
-
             # Enemy's turn (skipped if frozen)
             if not enemy.is_frozen:
                 damage = randint(*enemy.weapon_damage)  # Using the enemy's specific weapon damage
                 hero.health -= damage
                 sleep(2)
                 print(f"The enemy attacked and dealt {damage} damage using their {enemy.weapon}!")
-
                 # Enemy's special power effect (same as before, no change here)
                 if enemy.special_power == "Fire":
                     burn_damage = 2
@@ -225,7 +216,6 @@ while repetition == "yes":
             else:
                 sleep(2)
                 enemy.is_frozen = False  # Reset frozen state
-
             # Show updated health
             sleep(2)
             if hero.health < 0:
@@ -234,7 +224,6 @@ while repetition == "yes":
                 enemy.health = 0
             print(f"\nHero Health: {hero.health}")
             print(f"Enemy Health: {enemy.health}")
-
         # Determine winner
         if hero.health > 0:
             if enemy.health < 0:
@@ -263,13 +252,11 @@ while repetition == "yes":
     else:
         print("\nYou let the enemy escape!")
         sleep(2)
-
     repetition = input("\nDo you want to restart the game? (yes/no): ").strip().lower()
     sleep(2)
     while repetition != "yes" and repetition != "no":
         repetition = input("\nDo you want to restart the game? (yes/no): ").strip().lower()
         sleep(2)
-
 # Endgame summary
 print("\nGame Over!\n")
 sleep(4)
