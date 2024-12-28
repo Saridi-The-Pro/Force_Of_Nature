@@ -101,7 +101,7 @@ class Character:
             return True
         # If the damage is not critical, return False
         return False
-    def dodge(self):
+    def dodge(self, attacker, defender):
         """This function is used to determine whether the character dodges an attack or not.
         The function works by generating a random number between 1 and 100 (inclusive).
         If the generated number is less than or equal to the character's dodge chance,
@@ -112,7 +112,8 @@ class Character:
         # Check if the generated number is less than or equal to the character's dodge chance
         if roll <= self.dodge_chance:
             # If the character dodged the attack, print a success message and return True
-            print(f"\nYou successfully dodged the enemy's attack!")
+            print(f"\n{attacker.name} successfully dodged and skip {defender.name} next attack!")
+            defender.is_frozen = True
             return True
         else:
             # If the character failed to dodge the attack, print a failure message and return False
@@ -393,7 +394,7 @@ def main():
                     elif hero_action == "dodge":
                         # Call the dodge function on the hero object to determine if the dodge is successful
                         # If the hero successfully dodges, skip the rest of this iteration and start the next loop iteration
-                        if hero.dodge():
+                        if hero.dodge(hero, enemy):
                             continue
                 else:
                     # If the hero's dodge action fails,
