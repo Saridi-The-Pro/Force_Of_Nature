@@ -1,5 +1,5 @@
 # Force_Of_Nature
-This is the designated area where we can thoroughly test our projects before releasing them to the public. By conducting these tests, we can identify any issues or areas for improvement, ensuring that our programs are polished and ready for play by other users.
+It is a turn-based RPG in which players battle enemies using weapons, elemental powers, and strategy, leveling up and gaining health as they progress. Special powers like Fire and Ice add tactical depth. Players must defeat as many enemies as possible while managing health and choosing action wisely
 
 # IMPORTANT NOTE!!
 SOME OF THESE PROGRAMS ARE STILL UNOFFICIAL OR IN PROTOTYPE STAGES. IF YOU ENCOUNTER ANY BUGS WHILE USING THE PROGRAM, FEEL FREE TO CONTACT US VIA DIRECT MESSAGE ON INSTAGRAM, TALK TO US FACE-TO-FACE, OR USE ANY OTHER PLATFORM THROUGH WHICH WE CAN REACH YOU.
